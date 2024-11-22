@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# TypeSafe test folder (not needed for npm package)
+typesafe-test/
+
+# Ignore test.js in the typesafe-env folder
+test.js
+
+# Editor/IDE config files (npm package doesn't need them)
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

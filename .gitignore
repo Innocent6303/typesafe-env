@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE config files
+.vscode/
+.idea/
+
+# TypeSafe test folder
+typesafe-test/
+
+# Temporary or debug files
+*.tmp
+*.swp
+
+# Ignore test.js in the typesafe-env folder
+typesafe-env/test.js

@@ -1,0 +1,37 @@
+{
+  "name": "typesafe-env",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "author": "Abdul Mujeeb",
+  "license": "MIT",
+  "bin": {
+    "typesafeenv": "./dist/cli.js"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "build": "tsc && echo '#!/usr/bin/env node' | cat - dist/cli.js > temp.js && mv temp.js dist/cli.js && chmod +x dist/cli.js",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "keywords": [
+    "typescript",
+    "dotenv",
+    "cli",
+    "environment variables"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Innocent6303/typesafe-env"
+  },
+  "homepage": "https://github.com/Innocent6303/typesafe-env#readme"
+}

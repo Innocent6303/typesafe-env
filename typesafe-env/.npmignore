@@ -1,0 +1,15 @@
+# # .npmignore
+
+# # Ignore source code (TypeScript files)
+# src/
+
+# # Ignore test files
+# tests/
+
+# # Ignore config files
+# tsconfig.json
+# *.ts
+
+# # Ignore package manager files (if applicable)
+# yarn.lock
+# npm-debug.log
