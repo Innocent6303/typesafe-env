@@ -1,11 +1,10 @@
-# Node modules
+# Node modules (these will be installed by npm users)
 node_modules/
 
-# Build directories
-dist/
+# Build directories (exclude others but include dist/)
 build/
 
-# Environment files
+# Environment files (these are project-specific)
 .env
 
 # Logs
@@ -14,10 +13,10 @@ build/
 # TypeSafe test folder (not needed for npm package)
 typesafe-test/
 
-# Ignore test.js in the typesafe-env folder
+# Ignore test.js in the typesafe-env folder (if it's for internal testing)
 test.js
 
-# Editor/IDE config files (npm package doesn't need them)
+# Editor/IDE config files (not required for npm package)
 .vscode/
 .idea/
 

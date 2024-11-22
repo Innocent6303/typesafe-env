@@ -1,16 +1,17 @@
 {
-  "name": "typesafe-env",
-  "version": "1.0.0",
+  "name": "ts-typesafe-env",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "type": "module",
   "author": "Abdul Mujeeb",
   "license": "MIT",
+  "description": "TypeSafeEnv is a TypeScript-based package that ensures safe and efficient management of environment variables. With built-in methods and functions for type-safe validation, dynamic environment configuration, and automatic error handling, it reduces runtime errors caused by misconfigured environment variables. Additionally, the package includes a powerful CLI tool for validating and managing environment variables directly from the terminal. Ideal for modern JavaScript and TypeScript applications, TypeSafeEnv simplifies and secures your environment configuration process.",
   "bin": {
     "typesafeenv": "./dist/cli.js"
   },
   "scripts": {
     "test": "node test.js",
-    "build": "tsc && echo '#!/usr/bin/env node' | cat - dist/cli.js > temp.js && mv temp.js dist/cli.js && chmod +x dist/cli.js",
+    "build": "tsc && (echo #!/usr/bin/env node && type dist\\cli.js) > temp.js && move /Y temp.js dist\\cli.js",
     "start": "node dist/cli.js",
     "prepublishOnly": "npm run build"
   },
@@ -27,7 +28,11 @@
     "typescript",
     "dotenv",
     "cli",
-    "environment variables"
+    "environment variables",
+    "TypeSafeEnv",
+    "typeSafeEnv",
+    "typesafety",
+    "Clean Environment"
   ],
   "repository": {
     "type": "git",
