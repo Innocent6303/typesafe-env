@@ -109,9 +109,16 @@ export function validateEnvironment(requiredVars: string[]) {
  * Function to list environment variables containing a keyword.
  */
 
-export function listEnvironmentVariables(keyword?: string): void {
+export function listEnvironmentVariables(
+  keyword?: string,
+  filePath?: string
+): void {
   // Read and parse the .env file directly
-  const envPath = path.resolve(process.cwd(), ".env");
+  // const envPath = path.resolve(process.cwd(), ".env");
+  const envPath = filePath
+    ? path.resolve(process.cwd(), filePath)
+    : path.resolve(process.cwd(), ".env");
+  console.log("using env", envPath);
   if (!fs.existsSync(envPath)) {
     console.error("Error: .env file not found.");
     return;
@@ -120,6 +127,7 @@ export function listEnvironmentVariables(keyword?: string): void {
   const envVars = dotenv.parse(fs.readFileSync(envPath)); // Parses the .env file content
 
   // Filter variables based on the keyword
+
   const filteredVars = keyword
     ? Object.keys(envVars).filter((key) =>
         key.toLowerCase().includes(keyword.toLowerCase())
@@ -135,7 +143,14 @@ export function listEnvironmentVariables(keyword?: string): void {
   filteredVars.forEach((key) => {
     console.log(`${key}=${envVars[key]}`);
   });
+
+  // const envVarss = dotenv.parse(fs.readFileSync(envPath));
+  // console.log("new", envVarss);
 }
+// console.log("\n Testing custom .env");
+// const customEnv = "./config/env";
+// const newEnv = listEnvironmentVariables();
+// console.log("newEnv", newEnv);
 
 /**
  * Function to load environment variables from a file.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
-import { TypeSafeEnv } from "./index.js";
+// import { TypeSafeEnv } from "./index.js";
 import "dotenv/config";
 import {
   validateEnvironment,
@@ -24,11 +24,13 @@ program
   });
 
 // Define the 'list' command to list environment variables by a keyword
+
 program
-  .command("list [keyword]") // Declare the 'list' command and accept an optional 'keyword' argument
+  .command("list [keyword] [filePath]") // Declare the 'list' command and accept an optional 'keyword' argument
   .description("List environment variables by keyword")
-  .action((keyword) => {
-    listEnvironmentVariables(keyword);
+
+  .action((filePath, keyword) => {
+    listEnvironmentVariables(filePath, keyword);
   });
 
 // Define the 'load' command to load environment variables from a file
