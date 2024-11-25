@@ -1,19 +1,28 @@
 {
   "name": "ts-typesafe-env",
-  "version": "1.0.3",
-  "main": "dist/index.js",
+  "version": "1.1.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/index.js",
   "type": "module",
+  "types": "./dist/index.d.ts",
   "author": "Abdul Mujeeb",
   "license": "MIT",
-  "description": "TypeSafeEnv is a TypeScript-based package that ensures safe and efficient management of environment variables. With built-in methods and functions for type-safe validation, dynamic environment configuration, and automatic error handling, it reduces runtime errors caused by misconfigured environment variables. Additionally, the package includes a powerful CLI tool for validating and managing environment variables directly from the terminal. Ideal for modern JavaScript and TypeScript applications, TypeSafeEnv simplifies and secures your environment configuration process.",
+  "description": "Ts-Typesafeenv is a lightweight **TypeScript library** for handling **type-safe environment variables**. It ensures strict typing and avoids runtime errors. With built-in methods and functions for type-safe validation, dynamic environment configuration, and automatic error handling, it reduces runtime errors caused by misconfigured environment variables. Additionally, the package includes a powerful CLI tool for validating and managing environment variables directly from the terminal. Ideal for modern JavaScript and TypeScript applications, TypeSafeEnv simplifies and secures your environment configuration process.Inspired by dotenv",
   "bin": {
     "typesafeenv": "./dist/cli.js"
   },
   "scripts": {
     "test": "node test.js",
-    "build": "tsc && (echo #!/usr/bin/env node && type dist\\cli.js) > temp.js && move /Y temp.js dist\\cli.js",
+    "build": "tsc --project tsconfig.json && tsc --project tsconfig.cjs.json",
     "start": "node dist/cli.js",
     "prepublishOnly": "npm run build"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
@@ -25,14 +34,27 @@
     "dotenv": "^16.4.5"
   },
   "keywords": [
+    "typesafe",
+    "Ts-Typesafeenv",
     "typescript",
+    "cli package",
+    "env loader",
+    "environment config",
     "dotenv",
     "cli",
     "environment variables",
-    "TypeSafeEnv",
-    "typeSafeEnv",
+    "typesafeenv",
+    "typesafeenv",
+    "ts-typesafeenv",
+    "ts-typesafe-env",
     "typesafety",
-    "Clean Environment"
+    "clean environment",
+    "environment management",
+    "type safety",
+    "secure config",
+    "configurable env package",
+    "env file loader",
+    "type-safe dotenv"
   ],
   "repository": {
     "type": "git",
